@@ -11,8 +11,11 @@ class DBClient {
     MongoClient.connect(URL, { useUnifiedTopology: true }, (err, client) => {
       if (!err) {
         this.db = client.db(DATABASE);
+        this.users = this.db.collection('users');
+        this.files = this.db.collection('files');
       } else {
         console.log(err.message);
+        this.db = false;
       }
     });
   }
@@ -22,13 +25,11 @@ class DBClient {
   }
 
   async nbUsers() {
-    const users = await this.db.collection('users');
-    return users.countDocuments();
+    return this.users.countDocuments();
   }
 
   async nbFiles() {
-    const files = await this.db.collection('files');
-    return files.countDocuments();
+    return this.files.countDocuments();
   }
 }
 
