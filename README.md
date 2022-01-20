@@ -10,4 +10,4 @@
 
 ## Authors
 - David De La Hoz | [github](https://github.com/daviddlhz)
-- Adrian De La Asuncion | [github](https://github.com/AdrianDel07)
+- Adrian De La Asuncion | [github](https://github.com/adebudev)
