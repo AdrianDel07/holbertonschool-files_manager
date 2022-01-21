@@ -25,13 +25,11 @@ class DBClient {
   }
 
   async nbUsers() {
-    const userCount = this.users.countDocuments();
-    return userCount;
+    return this.users.countDocuments();;
   }
 
   async nbFiles() {
-    const fileCount = this.files.countDocuments();
-    return fileCount;
+    return this.files.countDocuments();;
   }
 }
 
