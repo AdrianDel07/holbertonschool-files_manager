@@ -24,7 +24,7 @@ class UsersController {
       password: encPassword,
     });
 
-    return res.status(200).send({ email, password: insertUser.insertedId });
+    return res.status(201).send({ email, password: insertUser.insertedId });
   }
 }
 
