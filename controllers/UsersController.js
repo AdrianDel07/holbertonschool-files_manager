@@ -31,7 +31,7 @@ class UsersController {
       userId: insertStat.insertedId.toString(),
     });
 
-    return res.status(201).send({ email, password: insertUser.insertedId });
+    return res.status(201).send({ email, id: insertUser.insertedId });
   }
 }
 
