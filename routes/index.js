@@ -2,15 +2,18 @@ const express = require('express');
 const router = express.Router();
 
 import AppController from '../controllers/AppController';
-
-const appController = new AppController();
+import UsersController from '../controllers/UsersController';
 
 router.get('/status', (_, res) => {
-  res.status(200).send(appController.getStatus());
+  AppController.getStatus(res);
 });
 
-router.get('/stats', async (_, res) => {
-  res.status(200).send(await appController.getStats());
+router.get('/stats', (_, res) => {
+  AppController.getStats(res);
+});
+
+router.post('/users', (req, res) => {
+  UsersController.postNew(req, res);
 });
 
 export default router;
