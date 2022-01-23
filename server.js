@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 import Routers from './routes';
 
 const PORT = process.env.PORT || 5000;

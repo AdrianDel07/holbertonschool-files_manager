@@ -31,15 +31,13 @@ class UsersController {
     });
 
     await userQueue.add({
-      userId: insertStat.insertedId.toString(),
+      userId: insertUser.insertedId.toString(),
     });
 
     return res.status(201).send({ email, id: insertUser.insertedId });
   }
 
   static async getMe(req, res) {
-    const { userId } = req;
-
     const token = req.header('X-Token') || null;
     if (!token) return res.status(401).send({ error: 'Unauthorized' });
 
